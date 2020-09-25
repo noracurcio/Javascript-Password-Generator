@@ -68,12 +68,12 @@ function generatePassword(){
 
 
   for (var i = 0; i < options.length; i++) {
-  var possibleCharacter = randomFunction(possibleCharacters);
-  result.push(possibleCharacter);
+  var possibleChar = randomFunction(possibleChar);
+  result.push(possibleChar);
   }
 
-  for (var i = 0; i < guaranteedCharacters.length; i++) {
-  result[i] = guaranteedCharacters[i];
+  for (var i = 0; i < guaranteedChar.length; i++) {
+  result[i] = guaranteedChar[i];
   }
 
   return result.join('');
