@@ -10,7 +10,7 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
 function getCriteria() {
   var confirmLength = prompt("How long would you like your password to be be? Between 8 and 128")
   if (confirmLength < 8 || confirmLength >128){
-    alert("Please chose a number between 8 and 128.")
+    alert("Please choose a number between 8 and 128.")
     return
   
   } 
@@ -18,10 +18,10 @@ function getCriteria() {
     alert("Password length must be provided as a number.")
     return
   }
-  var confirmUpper = confirm("What uppercase character would you like?")
-  var confirmLower = confirm("What lowercase letter would you like?")
-  var confirmSpecial = confirm("What special character would you like?")
-  var confirmNumber = confirm("What number would you like?")
+  var confirmUpper = confirm("Would you like your password to include upper case letters?")
+  var confirmLower = confirm("Would you like your password to include lower case letters?")
+  var confirmSpecial = confirm("Would you like your password to include special characters?")
+  var confirmNumber = confirm("Would you like your password to contain numbers?")
   if (confirmUpper === false && confirmLower === false && confirmSpecial === false && confirmNumber === false){
     alert("You must choose at least one parameter.")
     return
@@ -67,17 +67,19 @@ function generatePassword(){
   }
 
 
-for (var i = 0; i < options.length; i++) {
+  for (var i = 0; i < options.length; i++) {
   var possibleCharacter = randomFunction(possibleCharacters);
   result.push(possibleCharacter);
-}
+  }
 
-for (var i = 0; i < guaranteedCharacters.length; i++) {
+  for (var i = 0; i < guaranteedCharacters.length; i++) {
   result[i] = guaranteedCharacters[i];
+  }
+
+  return result.join('');
+
 }
 
-return result.join('');
-}
 
 
 var generateBtn = document.querySelector("#generate");
