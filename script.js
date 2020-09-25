@@ -65,19 +65,17 @@ function generatePassword(){
     possibleChar=possibleChar.concat(number)
     guaranteedChar.push(randomFunction(number))
   }
-
-
-  for (var i = 0; i < options.confirmLength; i++) {
+  for (var i=0; i < options.confirmLength; i++) {
+    result.push(randomFunction(possibleChar));
+  }
+  for (var i = 0; i < options.length; i++) {
   var possibleChar = randomFunction(possibleChar);
   result.push(possibleChar);
   }
-
   for (var i = 0; i < guaranteedChar.length; i++) {
   result[i] = guaranteedChar[i];
   }
-
-  return result.join("");
-
+  return result.join('');
 }
 
 
