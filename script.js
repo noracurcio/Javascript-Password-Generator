@@ -67,7 +67,7 @@ function generatePassword(){
   }
 
 
-  for (var i = 0; i < options.length; i++) {
+  for (var i = 0; i < options.confirmLength; i++) {
   var possibleChar = randomFunction(possibleChar);
   result.push(possibleChar);
   }
@@ -76,7 +76,7 @@ function generatePassword(){
   result[i] = guaranteedChar[i];
   }
 
-  return result.join('');
+  return result.join("");
 
 }
 
